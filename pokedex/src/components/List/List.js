@@ -1,39 +1,32 @@
-import React, {useState , useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import ItemList from './ItemList/ItemList'
 
-import request from '../../services/requests'
+import requests from '../../services/requests';
 
-export default function List() {
-    const [pokemonsList, setPokemonsList] = useState([]);
+export default function List(props) {
+    // eslint-disable-next-line react/prop-types
+    const {pokemonsList} = props;
+    
+    const [List, setList] = useState([]);
 
     useEffect(  () =>{
-        async function getData(){
-            let result =  await request.fetchAllPokemons();
-            await getPokemonInformation(result.data.results)
-        }
-        getData()
-    },[])
+        getPokemonInformation(pokemonsList)
+    },[pokemonsList])
 
     const getPokemonInformation = async(pokemonArray) =>{
         let pokemonData = await Promise.all(pokemonArray.map( async (pokemon) =>{
-            const data = await fetch(pokemon.url);
-            const result = await  data.json()
-            console.log(result)
+            const result = await requests.fetchOnePokemon(pokemon.url);
             return result
         }))
-        console.log(pokemonData)
-        setPokemonsList(pokemonData)
-        
-        
+        setList(pokemonData)
     }
 
     return (
         <div className="List">
                 {   
-                    pokemonsList &&
-                        pokemonsList.map( (pokemon,index) =><ItemList key={index} imagen={pokemon.sprites.front_default} name={pokemon.name}/>)
-                    
+                    List &&
+                        List.map( (pokemon,index) =><ItemList key={index} imagen={pokemon.sprites.front_default} name={pokemon.name}/>)                    
                 }           
         </div>
     )

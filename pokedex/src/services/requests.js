@@ -1,11 +1,15 @@
-import axios from './axios'
+import axios from 'axios'
 
 const requests = {
-    fetchAllPokemons :  () => { 
-        const result =  axios.get('/pokemon?offset=0&limit=18') 
+    baseURL:'https://pokeapi.co/api/v2',
+    fetchAllPokemons : async () => { 
+        const result =  await axios.get(`${requests.baseURL}/pokemon?offset=0&limit=18`) 
         return result;
     },
-    fetchOnePokemon: ()=>{ console.log('One Pokemon')} 
+    fetchOnePokemon: async(url)=>{
+        const result =  await axios.get(`${url}`) 
+        return result.data;
+     } 
 }
 
 export default requests
