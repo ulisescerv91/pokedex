@@ -4,6 +4,7 @@ import "./App.css";
 import Title from './components/Title/Title'
 import List from './components/List/List'
 import SearchBar from './components/SearchBar/SearchBar'
+import Modal from './components/Modal/Modal'
 
 import requests from './services/requests';
 
@@ -13,8 +14,7 @@ function App() {
   const [pokemonsListOriginal, setPokemonsListOriginal] = useState([]);
   const [pokemonsList, setPokemonsList] = useState([]);
   
-
-
+  const modalRef = React.useRef();//Modal
 
   const getData = async () =>{
       let result =  await requests.fetchAllPokemons();
@@ -35,6 +35,10 @@ function App() {
     }
   }
 
+  const openModal = (pokemon) =>{
+    modalRef.current.openModal(pokemon)
+  }
+
   useEffect(  () =>{
       getData()
   },[])
@@ -44,10 +48,11 @@ function App() {
   return <div className="App">
     
       <Fragment>
+            <Modal ref={modalRef}/>
             <Title/>
             <SearchBar updateList={updateListBySearch}  />
             {
-               <List pokemonsList={pokemonsList} /> 
+               <List pokemonsList={pokemonsList} openModal={openModal} /> 
               
               }
       </Fragment>

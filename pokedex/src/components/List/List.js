@@ -6,7 +6,7 @@ import requests from '../../services/requests';
 
 export default function List(props) {
     // eslint-disable-next-line react/prop-types
-    const {pokemonsList} = props;
+    const {pokemonsList, openModal} = props;
     
     const [List, setList] = useState([]);
 
@@ -26,7 +26,7 @@ export default function List(props) {
         <div className="List">
                 {   
                     List &&
-                        List.map( (pokemon,index) =><ItemList key={index} imagen={pokemon.sprites.front_default} name={pokemon.name}/>)                    
+                        List.map( (pokemon,index) =><ItemList key={index} pokemon={pokemon} openModal={openModal}/>)                    
                 }           
         </div>
     )

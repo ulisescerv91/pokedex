@@ -1,0 +1,94 @@
+.card {
+  padding: 15px; }
+
+.card__description {
+  position: relative;
+  z-index: 1; }
+
+.card__description::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url("../../../images/pokeball.png");
+  background-repeat: no-repeat;
+  background-position: 62% 40%;
+  background-size: 90px 90px;
+  opacity: 0.3;
+  z-index: -1; }
+
+.card__description__top {
+  display: flex; }
+
+.card__description__top__img {
+  transform: scale(1.2); }
+
+.card__description__top span {
+  line-height: 1; }
+
+.card__description__top__data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 12px;
+  margin-left: 10px; }
+
+.card__description__top__data__id {
+  font-size: 8px; }
+
+.card__description__top__data__name {
+  font-weight: bold; }
+
+.card__description__top__data__name::first-letter {
+  text-transform: uppercase; }
+
+.card__description__top__size {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 30px;
+  padding-bottom: 15px;
+  font-size: 8px; }
+
+.card__description__bottom {
+  font-size: 10px; }
+
+.card .stats {
+  margin-top: 10px; }
+
+.card .stats__line {
+  height: 1px;
+  background-color: #E5E5E5;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px; }
+
+.card .stats__line::after {
+  content: 'STATISTICS';
+  position: absolute;
+  font-size: 10px;
+  background-color: #fff;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -7px;
+  width: 70px;
+  text-align: center; }
+
+.card .stats .stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
+.card .stats .stat__name {
+  color: #A9A19D; }
+
+.card .stats .stat .progress {
+  width: 160px;
+  height: 1em; }
+
+.card .stats .stat .progress .stat_percentage {
+  line-height: 0.9;
+  margin-left: -23px;
+  color: white; }
