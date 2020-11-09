@@ -12,7 +12,7 @@ function App() {
 
   const [pokemonsListOriginal, setPokemonsListOriginal] = useState([]);
   const [pokemonsList, setPokemonsList] = useState([]);
-  const [searchValue, setSearchValue] = useState(''); 
+  
 
 
 
@@ -20,36 +20,32 @@ function App() {
       let result =  await requests.fetchAllPokemons();
       setPokemonsListOriginal(result.data.results);
       setPokemonsList(result.data.results)
+      console.log(result.data.results)
+      console.log(pokemonsListOriginal)
       return true;
   }
 
-  const filterPokemonList = (word) =>{
-      setPokemonsList( pokemonsListOriginal.filter( pokemon => pokemon.name.includes(word) ))
-  } 
+  const updateListBySearch = (list) =>{
+    console.log('list',list)
+    if( list.length === 0 ){
+      console.log("Pokemon sin coincidencias")
+      setPokemonsList(pokemonsListOriginal)
+    }else{
+      setPokemonsList(list)
+    }
+  }
 
   useEffect(  () =>{
       getData()
   },[])
 
-  //INPUT
-  const handleChange = (e) => {
-    let inputValue = e.target.value
-    if(inputValue.length > 2){        
-        setSearchValue(inputValue)
-        filterPokemonList(inputValue)
-    }else{
-      setSearchValue('')
-      setPokemonsList(pokemonsListOriginal)
-    }
-    return true
-}
+  
 
   return <div className="App">
     
       <Fragment>
             <Title/>
-            <h1>{searchValue}</h1>
-            <SearchBar   change={handleChange}/>
+            <SearchBar updateList={updateListBySearch}  />
             {
                <List pokemonsList={pokemonsList} /> 
               
