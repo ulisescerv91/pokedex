@@ -1,12 +1,27 @@
 .pagination {
   display: flex;
-  justify-content: center; }
-
-.pagination .cuadro {
-  height: 30px;
-  width: 30px;
-  display: flex;
   justify-content: center;
-  align-items: center;
-  border: 1px solid #ccc;
-  cursor: pointer; }
+  padding: 35px 0; }
+  .pagination .item {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #EFEFEF;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.25s; }
+    .pagination .item:hover {
+      border-color: #ddd;
+      transform: scale(1.2);
+      font-weight: bold; }
+  .pagination .arrow-left {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; }
+  .pagination .arrow-right {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; }
+  .pagination .selected {
+    background: #c4f1b4;
+    background: linear-gradient(135deg, #c4f1b4 0%, #40b2ae 100%); }

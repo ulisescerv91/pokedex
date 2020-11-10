@@ -1,13 +1,35 @@
+$itemSize:'35px';
+
 .pagination{
     display: flex;
     justify-content: center;
-    .cuadro{
-        height: 30px;
-        width: 30px;
+    padding: #{$itemSize} 0;
+    .item{
+        height: #{$itemSize};
+        width: #{$itemSize};
         display: flex;
         justify-content: center;
         align-items: center;
-        border:1px solid #ccc;
+        border:1px solid #EFEFEF;
+        background-color: #fff;
         cursor: pointer;
+        transition: all 0.25s;
+        &:hover{
+            border-color: #ddd;
+            transform: scale(1.2);
+            font-weight: bold;
+        }
+    }
+    .arrow-left{
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+    .arrow-right{
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .selected{
+        background: rgb(196,241,180);
+        background: linear-gradient(135deg, rgba(196,241,180,1) 0%, rgba(64,178,174,1) 100%);
     }
 }

@@ -8,6 +8,7 @@ const requests = {
     },
     fetchOnePokemon: async(url)=>{
         const result =  await axios.get(`${url}`) 
+        console.log(result.data)
         return result.data;
      },
      fetchPokemonBySearch:async () => { 
@@ -15,16 +16,10 @@ const requests = {
         // console.log(result.data.results)
         return result.data.results;
     },
-    fetchPokemonByID:async (idPokemon) => { 
-        try {            
-            const result =  await axios.get(`${requests.baseURL}/pokemon/${idPokemon}`) 
-            console.log()
-            return result.data.forms;
-        } catch (error) {
-            console.log('ERROR fetchPokemonByID: ' , error)
-            return [{}]
-        }
-    }
+    fetchPokemonByID: async(id)=>{
+        const result =  await axios.get(`${requests.baseURL}/pokemon/${id}`)         
+        return result.data;
+     },
 }
 
 export default requests

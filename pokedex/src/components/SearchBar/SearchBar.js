@@ -40,10 +40,9 @@ export default function SearchBar(props) {
                 
             }else{
                 //Buscar por ID
-                console.log("buscar por id")
                 let result = await requests.fetchPokemonByID(inputValue)
-                console.log(result)
-                updateList(result);
+                updateList([{name:result.name, url:`https://pokeapi.co/api/v2/pokemon/${result.id}`}]);
+                                
             }
         } 
         return true;

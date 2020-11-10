@@ -31,6 +31,7 @@ function App() {
       console.log("Pokemon sin coincidencias");
       setPokemonsList(pokemonsListOriginal);
     } else {
+      console.log(list)
       setPokemonsList(list);
     }
   };

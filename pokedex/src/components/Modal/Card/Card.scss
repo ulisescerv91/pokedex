@@ -22,7 +22,8 @@
 
             display: flex;            
             &__img{
-                transform: scale(1.2);
+                max-height: 100px;
+                max-width: 100px;
                 
             }
             span{
