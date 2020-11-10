@@ -1,0 +1,23 @@
+.stats{
+    margin-top: 10px;
+    width: 300px;
+    .stat{
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__name{
+            color:#A9A19D;                
+        }
+        .progress{
+            // position: relative;
+            width: 160px;
+            height: 1em;
+            .stat_percentage{
+                line-height: 0.9;
+                margin-left: -23px;
+                color: white;
+            }
+        }
+    }
+}

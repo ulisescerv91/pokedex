@@ -1,11 +1,14 @@
 /* eslint-disable react/prop-types */
-import React from 'react'
+import React,{useState}  from 'react'
 
 import './Card.css'
-import TypePokemon from './TypePokemon/TypePokemon'
-
+import TypePokemon from './TypePokemon/TypePokemon';
+import ChartPokemon from './ChartPokemon/ChartPokemon'
+import StatsPokemon from './StatsPokemon/StatsPokemon';
+import CheckBox from './CheckBok/CheckBox'
 export default function Card(props) {
-    const { pokemon } = props
+    const { pokemon  } = props
+    const [showChart, setShowChart] = useState(true)
     return (
         <div className='card'>
 
@@ -32,26 +35,12 @@ export default function Card(props) {
                     {"Lorem impasd asdae"}
                 </div>
             </div>
-            <div className='stats'>
-                <div className='stats__line'></div>
-                {
-                    pokemon.stats.map((stat, i) => {
-                        return (
-                            <div key={i} className='stat'>
-                                <span className='stat__name'>{stat.stat.name}</span>
-                                <div className="progress">
-                                    <div className="progress-bar" role="progressbar" style={{ width: stat.base_stat }} aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                    <span className='stat_percentage' >{stat.base_stat}</span>
-                                </div>
-
-
-                            </div>
-                        )
-                    }) 
-                }
-
-
-            </div>
+            <div className='stats__line'></div>
+            {
+                showChart ? <ChartPokemon pokemon={pokemon}/> : <StatsPokemon pokemon={pokemon}/>
+            }
+            <CheckBox active={showChart} toggle={setShowChart} />
+                  
         </div>
     )
 }

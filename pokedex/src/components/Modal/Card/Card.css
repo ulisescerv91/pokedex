@@ -55,15 +55,13 @@
 .card__description__bottom {
   font-size: 10px; }
 
-.card .stats {
-  margin-top: 10px; }
-
 .card .stats__line {
+  margin-top: 15px;
   height: 1px;
   background-color: #E5E5E5;
   width: 100%;
   position: relative;
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
 
 .card .stats__line::after {
   content: 'STATISTICS';
@@ -75,20 +73,3 @@
   top: -7px;
   width: 70px;
   text-align: center; }
-
-.card .stats .stat {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; }
-
-.card .stats .stat__name {
-  color: #A9A19D; }
-
-.card .stats .stat .progress {
-  width: 160px;
-  height: 1em; }
-
-.card .stats .stat .progress .stat_percentage {
-  line-height: 0.9;
-  margin-left: -23px;
-  color: white; }

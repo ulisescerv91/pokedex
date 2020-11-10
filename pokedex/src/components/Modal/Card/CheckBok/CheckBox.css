@@ -1,0 +1,65 @@
+.checkBox__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0; }
+
+.checkBox__container span {
+  font-size: 12px; }
+
+.checkBox__container .checkbox__input {
+  display: none; }
+
+.checkBox__container .checkbox__input, .checkBox__container .checkbox__input:after, .checkBox__container .checkbox__input:before,
+.checkBox__container .checkbox__input *,
+.checkBox__container .checkbox__input *:after,
+.checkBox__container .checkbox__input *:before,
+.checkBox__container .checkbox__input + .checkbox__label {
+  box-sizing: border-box; }
+
+.checkBox__container .checkbox__input::selection, .checkBox__container .checkbox__input:after::selection, .checkBox__container .checkbox__input:before::selection,
+.checkBox__container .checkbox__input *::selection,
+.checkBox__container .checkbox__input *:after::selection,
+.checkBox__container .checkbox__input *:before::selection,
+.checkBox__container .checkbox__input + .checkbox__label::selection {
+  background: none; }
+
+.checkBox__container .checkbox__input + .checkbox__label {
+  outline: 0;
+  display: block;
+  width: 30px;
+  height: 15px;
+  position: relative;
+  cursor: pointer;
+  user-select: none; }
+
+.checkBox__container .checkbox__input + .checkbox__label:after, .checkBox__container .checkbox__input + .checkbox__label:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%; }
+
+.checkBox__container .checkbox__input + .checkbox__label:after {
+  left: 0; }
+
+.checkBox__container .checkbox__input + .checkbox__label:before {
+  display: none; }
+
+.checkBox__container .checkbox__input:checked + .checkbox__label:after {
+  left: 50%; }
+
+.checkBox__container .tgl-light + .checkbox__label {
+  margin: 10px;
+  background: #f0f0f0;
+  border-radius: 2em;
+  padding: 2px;
+  transition: all 0.4s ease; }
+
+.checkBox__container .tgl-light + .checkbox__label:after {
+  border-radius: 50%;
+  background: #fff;
+  transition: all 0.2s ease; }
+
+.checkBox__container .tgl-light:checked + .checkbox__label {
+  background: #9fd6ae; }

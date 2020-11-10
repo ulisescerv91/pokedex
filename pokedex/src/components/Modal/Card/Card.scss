@@ -1,5 +1,6 @@
 .card{
     padding: 15px ;
+    // margin-top: 70px;
     &__description{
         position: relative;
         z-index: 1;
@@ -55,49 +56,30 @@
             }
 
         }
+        
         &__bottom{
             font-size: 10px;
         }
     }
-    .stats{
-        margin-top: 10px;
-        &__line{
-            height: 1px ;
-            background-color: #E5E5E5;
-            width: 100%;
-            position: relative;
-            margin-bottom: 20px;
-            &::after{
-                content:'STATISTICS';
-                position: absolute;
-                font-size: 10px;
-                background-color: #fff;
-                left: 50%;
-                transform: translateX(-50%);
-                top:-7px;
-                width: 70px;
-                text-align: center;
+    .stats__line{
+        margin-top: 15px;
+        height: 1px ;
+        background-color: #E5E5E5;
+        width: 100%;
+        position: relative;
+        margin-bottom: 10px;
+        &::after{
+            content:'STATISTICS';
+            position: absolute;
+            font-size: 10px;
+            background-color: #fff;
+            left: 50%;
+            transform: translateX(-50%);
+            top:-7px;
+            width: 70px;
+            text-align: center;
 
-            }
-        }
-        .stat{
-            
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            &__name{
-                color:#A9A19D;                
-            }
-            .progress{
-                // position: relative;
-                width: 160px;
-                height: 1em;
-                .stat_percentage{
-                    line-height: 0.9;
-                    margin-left: -23px;
-                    color: white;
-                }
-            }
         }
     }
+    
 }
