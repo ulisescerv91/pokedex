@@ -1,2 +1,4 @@
 .App {
-  position: relative; }
+  background-image: url("./images/pokepattern.jpg");
+  position: relative;
+  min-height: 100vh; }

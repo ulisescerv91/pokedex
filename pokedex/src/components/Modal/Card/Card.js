@@ -8,7 +8,7 @@ import StatsPokemon from './StatsPokemon/StatsPokemon';
 import CheckBox from './CheckBok/CheckBox'
 export default function Card(props) {
     const { pokemon  } = props
-    const [showChart, setShowChart] = useState(true)
+    const [showChart, setShowChart] = useState(false)
     return (
         <div className='card'>
 

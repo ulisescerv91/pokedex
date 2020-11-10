@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react'
 
 import ItemList from './ItemList/ItemList'
-
 import requests from '../../services/requests';
+
+import './List.css'
 
 export default function List(props) {
     // eslint-disable-next-line react/prop-types
@@ -23,11 +24,17 @@ export default function List(props) {
     }
 
     return (
-        <div className="List">
+        <div className="list">
+            <div className="container"> 
                 {   
                     List &&
-                        List.map( (pokemon,index) =><ItemList key={index} pokemon={pokemon} openModal={openModal}/>)                    
+                    List.map( (pokemon,index) => {
+                        return <div key={index}className='list__item'>
+                            <ItemList key={index} pokemon={pokemon} openModal={openModal} />
+                        </div>
+                    } )                    
                 }           
+            </div>
         </div>
     )
 }

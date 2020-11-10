@@ -1,6 +1,12 @@
 .Title{
-    border:1px solid #eee;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    .Title__line{
+        height: 3px;
+        width: 100%;
+        background: rgb(196,241,180);
+        background: linear-gradient(135deg, rgba(196,241,180,1) 0%, rgba(64,178,174,1) 100%);
+    }
 }

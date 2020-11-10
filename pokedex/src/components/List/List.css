@@ -1,0 +1,27 @@
+.list {
+  margin-top: 30px; }
+
+.list .container {
+  display: grid;
+  grid-template-columns: repeat(2, 40%);
+  grid-template-rows: repeat(9, 180px);
+  grid-gap: 10px;
+  justify-content: center;
+  max-width: 600px; }
+
+@media (min-width: 786px) {
+  .list .container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 190px);
+    max-width: 800px; } }
+
+@media (min-width: 1200px) {
+  .list .container {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    max-width: 1200px; } }
+
+.list .container .list__item {
+  display: flex;
+  justify-content: center;
+  align-items: center; }

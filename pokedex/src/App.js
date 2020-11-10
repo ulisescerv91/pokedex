@@ -49,7 +49,7 @@ function App() {
     
       <Fragment>
             <Modal ref={modalRef}/>
-            <Title/>
+            <Title />
             <SearchBar updateList={updateListBySearch}  />
             {
                <List pokemonsList={pokemonsList} openModal={openModal} /> 
