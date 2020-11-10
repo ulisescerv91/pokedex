@@ -2,13 +2,11 @@
   display: flex;
   justify-content: center;
   margin-top: 30px; }
-
-.searchBar__input {
-  padding: 10px 10px 10px 30px;
-  width: 85%;
-  border: 1px solid #EFEFEF;
-  outline: none; }
-
-@media (min-width: 786px) {
   .searchBar__input {
-    max-width: 780px; } }
+    padding: 10px 10px 10px 30px;
+    width: 85%;
+    border: 1px solid #EFEFEF;
+    outline: none; }
+    @media (min-width: 786px) {
+      .searchBar__input {
+        max-width: 780px; } }

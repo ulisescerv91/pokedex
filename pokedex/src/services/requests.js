@@ -2,8 +2,8 @@ import axios from 'axios'
 
 const requests = {
     baseURL:'https://pokeapi.co/api/v2',
-    fetchAllPokemons : async () => { 
-        const result =  await axios.get(`${requests.baseURL}/pokemon?offset=0&limit=18`) 
+    fetchAllPokemons : async (num) => { 
+        const result =  await axios.get(`${requests.baseURL}/pokemon?offset=${num}&limit=18`) 
         return result;
     },
     fetchOnePokemon: async(url)=>{

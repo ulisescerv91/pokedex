@@ -1,63 +1,59 @@
-import React, {useState, useEffect,Fragment } from 'react'
+import React, { useState, useEffect, Fragment } from "react";
 import "./App.css";
 //Components
-import Title from './components/Title/Title'
-import List from './components/List/List'
-import SearchBar from './components/SearchBar/SearchBar'
-import Modal from './components/Modal/Modal'
+import Title from "./components/Title/Title";
+import List from "./components/List/List";
+import SearchBar from "./components/SearchBar/SearchBar";
+import Modal from "./components/Modal/Modal";
+import Pagination from "./components/Pagination/Pagination";
 
-import requests from './services/requests';
-
+import requests from "./services/requests";
 
 function App() {
-
   const [pokemonsListOriginal, setPokemonsListOriginal] = useState([]);
   const [pokemonsList, setPokemonsList] = useState([]);
-  
-  const modalRef = React.useRef();//Modal
+  const itemsByPage = 18;
+  const totalItemsToPagination = 1050;
+  const [offset,setOffset] = useState(0)
 
-  const getData = async () =>{
-      let result =  await requests.fetchAllPokemons();
-      setPokemonsListOriginal(result.data.results);
-      setPokemonsList(result.data.results)
-      console.log(result.data.results)
-      console.log(pokemonsListOriginal)
-      return true;
-  }
+  const modalRef = React.useRef(); //Modal
 
-  const updateListBySearch = (list) =>{
-    console.log('list',list)
-    if( list.length === 0 ){
-      console.log("Pokemon sin coincidencias")
-      setPokemonsList(pokemonsListOriginal)
-    }else{
-      setPokemonsList(list)
+  const getData = async () => {
+    let result = await requests.fetchAllPokemons(offset);
+    setPokemonsListOriginal(result.data.results);
+    setPokemonsList(result.data.results);
+    return true;
+  };
+
+  const updateListBySearch = (list) => {
+    console.log("list", list);
+    if (list.length === 0) {
+      console.log("Pokemon sin coincidencias");
+      setPokemonsList(pokemonsListOriginal);
+    } else {
+      setPokemonsList(list);
     }
-  }
+  };
 
-  const openModal = (pokemon) =>{
-    modalRef.current.openModal(pokemon)
-  }
+  const openModal = (pokemon) => {
+    modalRef.current.openModal(pokemon);
+  };
 
-  useEffect(  () =>{
-      getData()
-  },[])
+  useEffect(() => {
+    getData();
+  }, [offset]);
 
-  
-
-  return <div className="App">
-    
+  return (
+    <div className="App">
       <Fragment>
-            <Modal ref={modalRef}/>
-            <Title />
-            <SearchBar updateList={updateListBySearch}  />
-            {
-               <List pokemonsList={pokemonsList} openModal={openModal} /> 
-              
-              }
+        <Modal ref={modalRef} />
+        <Title />
+        <SearchBar updateList={updateListBySearch} />
+        <List pokemonsList={pokemonsList} openModal={openModal} />
+        <Pagination itemsByPage={itemsByPage} totalItems={totalItemsToPagination} offset={setOffset}/>
       </Fragment>
-  
-  </div>;
+    </div>
+  );
 }
 
 export default App;

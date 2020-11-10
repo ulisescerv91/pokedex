@@ -1,0 +1,12 @@
+.pagination {
+  display: flex;
+  justify-content: center; }
+
+.pagination .cuadro {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  cursor: pointer; }
