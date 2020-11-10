@@ -1,0 +1,29 @@
+$tablet:786px;
+@mixin tablet {
+    @media ( min-width: #{$tablet} ) {
+        @content;
+    }
+}
+
+$desktop:1200px;
+@mixin desktop {
+    @media ( min-width: #{$desktop} ) {
+        @content;
+    }
+}
+
+.searchBar{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    
+    &__input{
+        padding: 10px 10px 10px 30px;
+        width: 85%;
+        border: 1px solid #EFEFEF;
+        outline: none;
+        @include tablet{
+            max-width: 780px;
+        }
+    }
+}

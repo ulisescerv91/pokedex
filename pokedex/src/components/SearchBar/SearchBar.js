@@ -1,5 +1,7 @@
-import React, {useState, useEffect, Fragment } from "react";
+import React, {useState, useEffect } from "react";
 import requests from "../../services/requests";
+
+import './SearchBar.css'
 
 export default function SearchBar(props) {
     // eslint-disable-next-line react/prop-types    
@@ -49,8 +51,8 @@ export default function SearchBar(props) {
     };
 
     return (
-        <Fragment>
-            <input onKeyUp={handleChange} />
-        </Fragment>
+        <div className='searchBar'>
+            <input onKeyUp={handleChange} className='searchBar__input'  placeholder='Search '/>
+        </div>
     );
 }
