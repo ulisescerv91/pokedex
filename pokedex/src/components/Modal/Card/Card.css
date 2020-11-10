@@ -1,5 +1,29 @@
 .card {
-  padding: 15px; }
+  padding: 15px 20px;
+  position: relative; }
+
+@media (min-width: 786px) {
+  .card {
+    transform: scale(1.2); } }
+
+@media (min-width: 1200px) {
+  .card {
+    transform: scale(1.4); } }
+
+.card .closeBtn {
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #D8D8D8;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  font-weight: bold; }
 
 .card__description {
   position: relative;
@@ -20,29 +44,31 @@
   z-index: -1; }
 
 .card__description__top {
-  display: flex; }
+  display: flex;
+  justify-content: space-around; }
 
-.card__description__top__img {
+.card__description__top__mainData {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.card__description__top__mainData__img {
   max-height: 100px;
   max-width: 100px; }
 
-.card__description__top span {
-  line-height: 1; }
-
-.card__description__top__data {
+.card__description__top__mainData__data {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  font-size: 12px;
-  margin-left: 10px; }
+  font-size: 16px;
+  line-height: 1; }
 
-.card__description__top__data__id {
-  font-size: 8px; }
+.card__description__top__mainData__data__id {
+  font-size: 12px; }
 
-.card__description__top__data__name {
+.card__description__top__mainData__data__name {
   font-weight: bold; }
 
-.card__description__top__data__name::first-letter {
+.card__description__top__mainData__data__name::first-letter {
   text-transform: uppercase; }
 
 .card__description__top__size {

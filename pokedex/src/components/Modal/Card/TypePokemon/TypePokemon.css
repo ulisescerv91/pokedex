@@ -1,41 +1,59 @@
 .typePokemon {
   margin-top: 5px; }
-  .typePokemon span {
-    border-radius: 2px;
-    color: #FFF;
-    font-size: 8px;
-    padding: 2px 7px; }
-  .typePokemon .normal {
-    background-color: #A8A878; }
-  .typePokemon .fire {
-    background-color: #F08030; }
-  .typePokemon .water {
-    background-color: #6890F0; }
-  .typePokemon .electric {
-    background-color: #F8D030; }
-  .typePokemon .grass {
-    background-color: #78C850; }
-  .typePokemon .ice {
-    background-color: #98D8D8; }
-  .typePokemon .ground {
-    background-color: #E0C068; }
-  .typePokemon .flying {
-    background-color: #A890F0; }
-  .typePokemon .ghost {
-    background-color: #705898; }
-  .typePokemon .rock {
-    background-color: #B8A038; }
-  .typePokemon .fighting {
-    background-color: #C03028; }
-  .typePokemon .poison {
-    background-color: #A040A0; }
-  .typePokemon .psychic {
-    background-color: #F85888; }
-  .typePokemon .bug {
-    background-color: #A8B820; }
-  .typePokemon .dark {
-    background-color: #705848; }
-  .typePokemon .steel {
-    background-color: #B8B8D0; }
-  .typePokemon .dragon {
-    background-color: #7038F8; }
+
+.typePokemon span {
+  border-radius: 2px;
+  color: #FFF;
+  font-size: 8px;
+  padding: 2px 7px; }
+
+.typePokemon .normal {
+  background-color: #A8A878; }
+
+.typePokemon .fire {
+  background-color: #F08030; }
+
+.typePokemon .water {
+  background-color: #6890F0; }
+
+.typePokemon .electric {
+  background-color: #F8D030; }
+
+.typePokemon .grass {
+  background-color: #78C850; }
+
+.typePokemon .ice {
+  background-color: #98D8D8; }
+
+.typePokemon .ground {
+  background-color: #E0C068; }
+
+.typePokemon .flying {
+  background-color: #A890F0; }
+
+.typePokemon .ghost {
+  background-color: #705898; }
+
+.typePokemon .rock {
+  background-color: #B8A038; }
+
+.typePokemon .fighting {
+  background-color: #C03028; }
+
+.typePokemon .poison {
+  background-color: #A040A0; }
+
+.typePokemon .psychic {
+  background-color: #F85888; }
+
+.typePokemon .bug {
+  background-color: #A8B820; }
+
+.typePokemon .dark {
+  background-color: #705848; }
+
+.typePokemon .steel {
+  background-color: #B8B8D0; }
+
+.typePokemon .dragon {
+  background-color: #7038F8; }

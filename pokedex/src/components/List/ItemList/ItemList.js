@@ -6,6 +6,12 @@ import './ItemList.css'
 
 export default function ItemList(props) {
     const {pokemon,openModal} = props;
+
+    const setIdPokemon = (id) =>{
+        return (id<10) ? `00${id}` :  (id<100) ? `0${id}` : id
+    }
+
+
     return (
         <div className="ItemList" onClick={()=>openModal(pokemon)}>
             <img  src={(pokemon.sprites.front_default === null) ? WhoIs : pokemon.sprites.front_default} className='ItemList__img' alt={'name'} />
@@ -14,7 +20,7 @@ export default function ItemList(props) {
                     {pokemon.name}
                 </span>
                 <span className='ItemList__data__number'>
-                    001
+                    #{setIdPokemon(pokemon.id)}
                 </span>
             </div>
         </div>

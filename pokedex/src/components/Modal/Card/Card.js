@@ -8,20 +8,27 @@ import ChartPokemon from './ChartPokemon/ChartPokemon'
 import StatsPokemon from './StatsPokemon/StatsPokemon';
 import CheckBox from './CheckBok/CheckBox'
 export default function Card(props) {
-    const { pokemon  } = props
+    const { pokemon ,closeModal } = props
     const [showChart, setShowChart] = useState(false)
+
+    const setIdPokemon = (id) =>{
+        return (id<10) ? `00${id}` :  (id<100) ? `0${id}` : id
+    }
     return (
         <div className='card'>
 
+            <div className="closeBtn" onClick={closeModal}>X</div>
             <div className='card__description  '>
                 <div className='card__description__top'>
-                    <img src={(pokemon.sprites.front_default === null) ? WhoIs : pokemon.sprites.front_default } className='card__description__top__img' />
-                    <div className='card__description__top__data'>
-                        <span className='card__description__top__data__id'>#{pokemon.id}</span>
-                        <span className='card__description__top__data__name'>{pokemon.name}</span>
-                        <span className='card__description__top__data__type'>
-                             {  (pokemon.types) ? <TypePokemon type={pokemon.types[0].type.name}/> : ''}
-                        </span>
+                    <div className='card__description__top__mainData'>
+                        <img src={(pokemon.sprites.front_default === null) ? WhoIs : pokemon.sprites.front_default } className='card__description__top__mainData__img' />
+                        <div className='card__description__top__mainData__data'>                        
+                            <span className='card__description__top__mainData__data__id'>#{setIdPokemon(pokemon.id)}</span>
+                            <span className='card__description__top__mainData__data__name'>{pokemon.name}</span>
+                            <span className='card__description__top__mainData__data__type'>
+                                {  (pokemon.types) ? <TypePokemon type={pokemon.types[0].type.name}/> : ''}
+                            </span>
+                        </div>
                     </div>
                     <div className='card__description__top__size'>
                         <div className='card__description_top__size__height'>
@@ -33,8 +40,8 @@ export default function Card(props) {
                     </div>
                 </div>
                 <div className='card__description__bottom'>
-                    {"Lorem impasd asdae"}
-                </div>
+                    {""}
+                </div> 
             </div>
             <div className='stats__line'></div>
             {

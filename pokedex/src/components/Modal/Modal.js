@@ -36,9 +36,8 @@ const Modal = forwardRef(  (props,ref)=>{
 
         return ReactDOM.createPortal(
             <div className='modal-wrapper'>
-                <div onClick={closeModal} className="close__modal">Close</div>
                 <div className='modal__container'>
-                    <Card pokemon={pokemon}/>
+                    <Card pokemon={pokemon} closeModal={closeModal}/>
                 </div>
             </div>,document.getElementById('modal-root'))
         

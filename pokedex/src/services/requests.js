@@ -7,13 +7,11 @@ const requests = {
         return result;
     },
     fetchOnePokemon: async(url)=>{
-        const result =  await axios.get(`${url}`) 
-        console.log(result.data)
+        const result =  await axios.get(`${url}`)         
         return result.data;
      },
      fetchPokemonBySearch:async () => { 
-        const result =  await axios.get(`${requests.baseURL}/pokemon?offset=0&limit=1050`) 
-        // console.log(result.data.results)
+        const result =  await axios.get(`${requests.baseURL}/pokemon?offset=0&limit=1050`)         
         return result.data.results;
     },
     fetchPokemonByID: async(id)=>{
